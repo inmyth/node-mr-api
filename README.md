@@ -6,7 +6,7 @@ Mr Filter filters forbidden command and transaction from rippled request.
 - Payment to other users is forbidden but payment to issuer is allowed. Issuer addresses have to be put in config. 
 
 ### Setup
-![MrFilter](https://ibb.co/g7VLbw)
+![MrFilter] (https://image.ibb.co/kVr43b/mrfilter.png)
 
 - Deploy in a server and set where rippled endpoint and listening port for incoming request are. 
 - Define all issuer addresses in `allowedPaymentDestinations`
@@ -49,7 +49,7 @@ Clients will send transactions with [sign and submit method](https://ripple.com/
 ```
 
 ### Setup
-![APIProvider](https://ibb.co/fZbUKG)
+![APIProvider](https://image.ibb.co/i8wktb/mrapi.png)
 
 
 - Deploy one Redis master. Restrict inbound access to Mr.ID server. Mr.ID will write (or delete) user's api key on it. 
