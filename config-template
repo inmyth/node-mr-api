@@ -1,0 +1,8 @@
+{
+ "rippled" : "wss://s1.ripple.com",
+ "listeningPort" : 8080,
+ "allowedPaymentDestinations" : [
+ 	"issuer1",
+ 	"issuer2"
+  ]
+}
