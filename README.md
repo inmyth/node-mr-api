@@ -6,7 +6,7 @@ Mr Filter filters forbidden command and transaction from rippled request.
 - Payment to other users is forbidden but payment to issuer is allowed. Issuer addresses have to be put in config. 
 
 ### Setup
-![MrFilter] (https://image.ibb.co/kVr43b/mrfilter.png)
+![MrFilter](https://image.ibb.co/kVr43b/mrfilter.png)
 
 - Deploy in a server and set where rippled endpoint and listening port for incoming request are. 
 - Define all issuer addresses in `allowedPaymentDestinations`
@@ -15,13 +15,13 @@ Mr Filter filters forbidden command and transaction from rippled request.
 Typical config :
 ```
 {
- "rippled" : "wss://r1.mr.exchange",
- "listeningPort" : 8080,
- "allowedPaymentDestinations" : [
- 	"rqwertyuiopasdfghjkETC",
- 	"rpoiuytrewqlkhggfdsJPY"
+  "rippled" : "wss://r1.mr.exchange",
+  "listeningPort" : 8080,
+  "allowedPaymentDestinations" : [
+    "rqwertyuiopasdfghjkETC",
+    "rpoiuytrewqlkhggfdsJPY"
   ],
-	"isFilterOnly" : true
+  "isFilterOnly" : true
 }
 ```
 
@@ -67,18 +67,18 @@ HMSET address apikey "userapikey" secret "susersecret"
 Typical config :
 ```
 {
- "rippled" : "wss://r1.mr.exchange",
- "listeningPort" : 8080,
- "allowedPaymentDestinations" : [
- 	"rqwertyuiopasdfghjkETC",
- 	"rpoiuytrewqlkhggfdsJPY"
+  "rippled" : "wss://r1.mr.exchange",
+  "listeningPort" : 8080,
+  "allowedPaymentDestinations" : [
+    "rqwertyuiopasdfghjkETC",
+    "rpoiuytrewqlkhggfdsJPY"
   ],
-	"isFilterOnly" : false,
-	"redis" : {
-		"host" : "54.205.99.208",
-		"port" : 6379,
-		"password" : ""
-	}
+  "isFilterOnly" : false,
+  "redis" : {
+    "host" : "54.205.99.208",
+    "port" : 6379,
+    "password" : ""
+  }
 }
 ```
 
