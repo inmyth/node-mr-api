@@ -175,7 +175,7 @@ function validate(json) {
 		if (!o.valid.isValid){
 			res = Promise.resolve(null);
 		} else {
-			if (o.valid.isTx){
+			if (o.valid.isTx && isFilterOnly){
 				res = apiMatch(o.json);
 			} else {
 				res = Promise.resolve(o.json);
