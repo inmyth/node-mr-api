@@ -4,5 +4,11 @@
  "allowedPaymentDestinations" : [
  	"issuer1",
  	"issuer2"
-  ]
+  ],
+	"isFilterOnly" : true,
+	"redis" : {
+		"host" : "54.205.99.208",
+		"port" : 6379,
+		"password" : ""
+	}
 }
