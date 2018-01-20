@@ -1,9 +1,13 @@
 # Mr Filter and API Key Provider in Node
 
+If request contains forbidden command, the program will pass `{command : "" }` to rippled.
+
+Payment to other users is forbidden but payment to issuer is allowed. Issuer addresses have to be put in config.
+ 
 ## Mr Filter 
 Mr Filter filters forbidden command and transaction from rippled request. 
-- If request contains forbidden command, the program will pass `{command : }` to rippled.
-- Payment to other users is forbidden but payment to issuer is allowed. Issuer addresses have to be put in config. 
+
+All transactions are signed offline and sent as tx_blob. All raw transactions are blocked. 
 
 ### Setup
 ![MrFilter](https://image.ibb.co/kVr43b/mrfilter.png)
@@ -27,7 +31,8 @@ Typical config :
 
 ## API Provider 
 API Provider replaces user api key with his secret key then passes his request to rippled. 
-Clients will send transactions with [sign and submit method](https://ripple.com/build/rippled-apis/#sign-and-submit-mode) like this. 
+
+Request containing tx_blob is blocked. Clients will send transactions with [sign and submit method](https://ripple.com/build/rippled-apis/#sign-and-submit-mode). 
 ```
 {
   "id": 1,
@@ -102,27 +107,3 @@ forever start -o out.log -e err.log index.js
 
 
 
-##### Version Logs
-03 merged
-
-03
-- API matcher
-- updated config
-- stopgap variable isFilterOnly introduced, will be removed after api backend is ready
-
-#### apimatch
-50
-- tx_blob blocked, all tx will use unsafe methog with secret replaced with api key
-
-#### mrfilter
-20
-- basic mr filter
-- commands in whitelist allowed
-- tx_blob allowed, payment to specific destinations allowed (issuer address for withdrawal) 
-
-#### master
-02
-- allowed payment for specified destinations only (for user to withdraw or transfer)
-- unblocked tx_blob for now
-
-01. Mr Filter 
