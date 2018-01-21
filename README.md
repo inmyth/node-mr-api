@@ -87,12 +87,10 @@ Typical config :
 }
 ```
 
-## Config
+## Running
+
 All configuration should be put in `config` file. It can be renamed from `config-template`. 
 
-For MrFilter set `isFilterOnly:false`.
-
-## Running
 1. Install dependencies
 ```
 npm install
